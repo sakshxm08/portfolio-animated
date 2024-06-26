@@ -1,6 +1,7 @@
 import { Container } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./layout/Home";
 
 const Layout = () => {
   return (
@@ -25,7 +26,7 @@ function App() {
       children: [
         {
           path: "",
-          element: <></>,
+          element: <Home />,
         },
         {
           path: "about",

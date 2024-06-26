@@ -32,7 +32,7 @@ const Navbar = () => {
               to={item.link}
               className={({ isActive }) =>
                 (isActive ? "text-main-500" : "text-white") +
-                " relative after:content-[''] after:absolute after:top-full after:left-0 after:h-px after:w-full after:bg-main-500 after:scale-x-0 hover:after:scale-x-100 after:transition-all transition-all"
+                " font-medium relative after:content-[''] after:absolute after:top-full after:left-0 after:h-px after:w-full after:bg-main-500 after:scale-x-0 hover:after:scale-x-100 after:transition-all transition-all"
               }
             >
               {item.label}
