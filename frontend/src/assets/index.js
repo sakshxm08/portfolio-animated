@@ -1,3 +1,3 @@
 import dottedPattern from "./dotted-pattern.svg";
-
-export { dottedPattern };
+import sakshamTransparent from "./saksham2-transparent.png";
+export { dottedPattern, sakshamTransparent };
