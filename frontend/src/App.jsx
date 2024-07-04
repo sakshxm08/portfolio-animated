@@ -2,6 +2,7 @@ import { Container } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./layout/Home";
+import Login from "./pages/Login";
 
 const Layout = () => {
   return (
@@ -41,6 +42,10 @@ function App() {
           element: <></>,
         },
       ],
+    },
+    {
+      path: "auth",
+      element: <Login />,
     },
   ]);
   return <RouterProvider router={router} />;

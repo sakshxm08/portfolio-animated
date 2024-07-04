@@ -1,5 +1,6 @@
-import { Container, Flex, Spacer } from "@chakra-ui/react";
+import { Container, Flex, Image, Spacer } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import { logo } from "../assets";
 
 const Navbar = () => {
   const navItems = [
@@ -19,11 +20,7 @@ const Navbar = () => {
       minW={"100vw"}
     >
       <Flex>
-        <img
-          src="https://s3.ap-south-1.amazonaws.com/assets.sakshxm08.in/sakshxm08-logo-transparent"
-          alt=""
-          className=" invert w-16"
-        />
+        <Image src={logo} alt="logo" className=" invert w-16" />
         <Spacer />
         <Flex alignItems={"center"} gap={20}>
           {navItems.map((item) => (

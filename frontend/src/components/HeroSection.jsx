@@ -2,7 +2,7 @@ import { Button, Container, Flex, Heading } from "@chakra-ui/react";
 import { dottedPattern } from "../assets";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
-import Terminal from "../components/Terminal";
+import Terminal from "./Terminal";
 const HeroSection = () => {
   const contactItems = [
     { label: "Github", icon: <FaGithub className="text-main-500" />, link: "" },

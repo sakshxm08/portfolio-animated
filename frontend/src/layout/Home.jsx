@@ -1,6 +1,6 @@
 import { Center, Container } from "@chakra-ui/react";
 
-import HeroSection from "../pages/HeroSection";
+import HeroSection from "../components/HeroSection";
 import Tagline from "../components/Tagline";
 import About from "../components/About";
 import Projects from "../components/Projects";
