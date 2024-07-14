@@ -1,7 +1,8 @@
 import { GoCopy } from "react-icons/go";
-import { Box, Code, Flex, Text } from "@chakra-ui/react";
-
+import { Box, Code, Flex, Text, useClipboard } from "@chakra-ui/react";
+import { MdDone } from "react-icons/md";
 const Terminal = () => {
+  const { onCopy, hasCopied } = useClipboard("npx sakshxm08");
   return (
     <Code
       bg={"gray.800"}
@@ -37,8 +38,9 @@ const Terminal = () => {
           _hover={{ borderColor: "main.600" }}
           cursor={"pointer"}
           className="transition-all"
+          onClick={onCopy}
         >
-          <GoCopy />
+          {hasCopied ? <MdDone className="text-main-500" /> : <GoCopy />}
         </Box>
       </Flex>
     </Code>

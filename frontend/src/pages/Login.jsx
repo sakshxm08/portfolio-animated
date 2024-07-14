@@ -35,7 +35,7 @@ const Login = () => {
     e.preventDefault();
     let error = "";
     const loginPromise = axios
-      .post(import.meta.env.VITE_BACKEND_BASE_URL + "/auth/login", {
+      .post(import.meta.env.VITE_APP_BASE_URL + "/auth/login", {
         username,
         password,
       })

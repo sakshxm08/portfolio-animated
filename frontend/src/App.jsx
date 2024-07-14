@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./layout/Home";
 import Login from "./pages/Login";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Layout = () => {
   return (
@@ -19,7 +21,25 @@ const Layout = () => {
     </Container>
   );
 };
+
 function App() {
+  useEffect(() => {
+    const getAllProjects = async () => {
+      const response = await fetch(
+        import.meta.env.VITE_APP_BASE_URL + "/project"
+      );
+      const json = await response.json();
+      if (!response.ok) {
+        // return toast.error(json.error);
+        console.log("error");
+      }
+      if (response.ok) {
+        console.log(json);
+        // console.log(json);
+      }
+    };
+    getAllProjects();
+  }, []);
   const router = createBrowserRouter([
     {
       path: "/",

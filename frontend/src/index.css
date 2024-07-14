@@ -9,3 +9,7 @@ input:-webkit-autofill:focus {
 input[data-autocompleted] {
   background-color: transparent;
 }
+
+html {
+  scroll-snap-type: y mandatory;
+}
