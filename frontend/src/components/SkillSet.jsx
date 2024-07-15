@@ -46,6 +46,7 @@ const SkillSet = () => {
           name: "ExpressJS",
           //   icon: <SiExpress className="text-5xl text-cyan-400" />,
           icon: "https://asset.brandfetch.io/idh1lvV1BF/iddg3cqCPj.png",
+          invert: true,
         },
       ],
     },
@@ -122,24 +123,33 @@ const SkillSet = () => {
 
   const iconVariants = (duration) => ({
     initial: { y: -6 },
-    animate: {
-      y: [6, -6],
-      transition: {
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "linear",
-        duration,
-      },
+    animate: (index) => {
+      return {
+        y: [-6, 6],
+        transition: {
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "linear",
+          duration,
+          delay: 0.05 * index,
+        },
+      };
     },
   });
   // { name: "HTML", icon: <SiHtml5 /> },
   // { name: "CSS", icon: <SiCss3 /> },
   console.log(Object.keys(skills).map((item) => console.log(item)));
   return (
-    <div className="mb-48 flex flex-col gap-8">
+    <motion.div
+      className="mb-48 flex flex-col gap-8"
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       <span>
         <Heading color={"white"} as={"h4"}>
-          Technologies I use
+          Technologies I Use
         </Heading>
       </span>
       <div className="flex flex-wrap gap-12">
@@ -155,9 +165,10 @@ const SkillSet = () => {
                 delay: index * 0.4,
               },
             }}
+            viewport={{ once: true }}
             className="flex flex-wrap justify-center flex-col gap-4 pr-12 border-r border-r-gray-900"
           >
-            <Heading color={"white"} as={"h5"} fontSize={24}>
+            <Heading color={"gray"} as={"h5"} fontSize={24}>
               {skills[skill].title}
             </Heading>
             <Flex gap={4}>
@@ -165,16 +176,19 @@ const SkillSet = () => {
                 <motion.div
                   key={item.name}
                   initial="initial"
-                  animate="animate"
-                  variants={iconVariants(ind + 2.5)}
-                  transition={{ delay: ind * 0.2 }}
+                  whileInView="animate"
+                  variants={iconVariants(ind + 2)}
+                  whileHover={{ y: -6 }}
+                  //   transition={{ delay: ind * 0.2 }}
+                  custom={ind}
                 >
                   <Tooltip
                     label={item.name}
                     aria-label="A tooltip"
-                    borderRadius={"8px"}
+                    borderRadius={"4px"}
+                    background={"main.600"}
                   >
-                    <div className="rounded-2xl border-2 border-neutral-800 p-4 flex items-center justify-center">
+                    <div className="rounded-2xl border-2 border-main-800 p-4 flex items-center justify-center">
                       {/* <SiReact className="text-6xl text-cyan-400" /> */}
                       <img
                         src={item.icon}
@@ -191,7 +205,7 @@ const SkillSet = () => {
           </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
