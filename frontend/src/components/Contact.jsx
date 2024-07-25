@@ -22,6 +22,7 @@ const Contact = () => {
       alignItems={"center"}
       justifyContent={"center"}
       py={160}
+      px={0}
       mt={40}
       flexDirection={"column"}
       gap={10}

@@ -83,6 +83,7 @@ const Login = () => {
       alignItems={"center"}
       justifyContent={"center"}
       minH={"100vh"}
+      px={0}
     >
       <Flex
         border={"1px solid"}

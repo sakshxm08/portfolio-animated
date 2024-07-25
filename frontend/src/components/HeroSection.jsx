@@ -38,7 +38,7 @@ const RevealText = ({ children, width = "fit-content", delay = 0.5 }) => {
         initial="hidden"
         animate={animateOverlay}
         transition={{ duration: 0.8, delay, ease: "easeIn" }}
-        className=" absolute top-0 bottom-0 left-0 right-0 bg-main-500 z-20"
+        className=" absolute top-0 bottom-0 left-0 right-0 bg-main-500 z-10"
       />
     </Box>
   );
@@ -79,7 +79,7 @@ const HeroSection = () => {
           className="w-40 aspect-square invert-[0.1] absolute top-24 -left-8"
           color="white"
         />
-        <Flex direction={"column"} gap={0} zIndex={1} alignItems={"normal"}>
+        <Flex direction={"column"} gap={0} zIndex={10} alignItems={"normal"}>
           <RevealText>
             <Heading as={"h4"} color={"main.500"} fontWeight={500}>
               Hey there, I&apos;m-

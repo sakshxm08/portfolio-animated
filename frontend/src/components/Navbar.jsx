@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   const navItems = [
-    { label: "Home", link: "/" },
-    { label: "Projects", link: "/projects" },
     {
       label: "Resume",
       link: "https://drive.google.com/file/d/1PAwOCj-z3_uYDbyPKANzd2JhCREc3dKA/view?usp=drive_link",
@@ -14,23 +12,13 @@ const Navbar = () => {
     },
   ];
   return (
-    <motion.div
+    <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
+      className="sticky top-0 bg-black border-b border-gray-900 w-screen z-50"
     >
-      <Container
-        as={"nav"}
-        bg={"black"}
-        px={12}
-        py={3}
-        borderBottom={"1px solid"}
-        borderColor={"gray.900"}
-        minW={"100vw"}
-        pos={"sticky"}
-        top={0}
-        zIndex={1000}
-      >
+      <Container px={12} py={3} w={"100%"} minW={"100vw"}>
         <Flex>
           <Image src={logo} alt="logo" className=" invert w-16" />
           <Spacer />
@@ -51,7 +39,7 @@ const Navbar = () => {
           </Flex>
         </Flex>
       </Container>
-    </motion.div>
+    </motion.nav>
   );
 };
 

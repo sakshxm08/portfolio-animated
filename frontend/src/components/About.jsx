@@ -72,11 +72,11 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <Box w={"fit-content"} pos={"relative"} pr={20} py={8}>
+          <Box w={"fit-content"} pos={"relative"} py={8}>
             <Image
               src={sakshamTransparent}
               w={"360px"}
-              zIndex={100}
+              zIndex={10}
               pos={"relative"}
             />
             <Image

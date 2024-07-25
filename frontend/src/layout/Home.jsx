@@ -9,9 +9,10 @@ import Footer from "../components/Footer";
 
 import { motion } from "framer-motion";
 import SkillSet from "../components/SkillSet";
+
 const Home = () => {
   return (
-    <Container minW={"100vw"}>
+    <Container minW={"100vw"} p={0}>
       <HeroSection />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -24,6 +25,7 @@ const Home = () => {
         </Center>
       </motion.div>
       <Container
+        px={0}
         maxW={"7xl"}
         display={"flex"}
         flexDirection={"column"}
